@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>联系我们</title>
+
+<link href="../css/viewCss/common.css" rel="stylesheet" />
+<link href="../css/viewCss/content.css" rel="stylesheet" />
+		<!-- 百度地图api css-->
+		<style type="text/css">
+			.demo{width:980px;margin:20px auto;}
+			.demo p{ color:black;}
+			.demo input{ border:solid 1px #e1e1e1}
+			#l-map{height:400px;width:600px;float:left;border:1px solid #bcbcbc;}
+			#r-result{height:400px;width:260px;float:right; overflow:auto;}
+		</style>
+		<script src="../js/viewjs/jquery (2).js"></script>
+		<!-- 百度地图api js-->
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4"></script>
+		<script type="text/javascript">
+			$(function() {			
+				//topbar 单击样式
+				$(".topbar li a").click(function(){
+					$(this).css("color", "#0153a5");
+					$(this).parent().siblings().find("a").css("color", "#666");
+				});
+				
+				//鼠标经过列表样式
+				$(".left_ul li").hover (
+					function(){
+						$(this).addClass("li_click_b");
+					},
+					function(){
+						$(this).removeClass("li_click_b");
+					}
+				);
+			});
+			
+		</script>
+</head>
+
+<body>
+<!--返回-->
+<div class="back"><a>回到顶部</a></div>
+<!--顶部-->
+<div class="headerbox">
+	<div class="header overflowH">
+    	<div class="headerleft">欢迎您来到尚兴国术馆形意拳学习网！</div>
+        <div class="headerright">
+        	<a class="orange"href="">登录<span class="line">|</span></a>
+            <a class="blue register" href="">注册<span class="line">|</span></a>
+            <a href="">公众号<span class="line">|</span></a>
+            <a class="blue"href="">关于我们&nbsp;&nbsp;</a>
+            <img src="../images/viewimages/common/phone.png">
+            <a class="orange">18701658769</a>
+        </div>
+    </div>
+</div>
+<!--Logo-->
+<div class="nav">
+	<div class="navbox overflowH">
+		<div class="logo">
+        	<img src="../images/viewimages/common/logo01.png">
+        </div>
+    	<div class="rightnav">
+        	<a href="index.html">首页</a>
+            <a href="changshi.html">形意拳常识</a>
+            <a href="video.html">形意拳视频</a>
+            <a href="video.html">形意拳教程</a>
+            <a href="introduce.html">场馆介绍</a>
+            <a href="news.html">新闻动态</a>
+            <a class="current"  href="content.html">联系我们</a>
+            <a href="message.html">信息留言</a>
+        </div>
+       </div>
+</div>
+		<!-- 好像只有添加iframe才能使头部独立成一个文件来处理，而且使用js给导航栏添加单击样式
+			<iframe name="contain" width="100%" height="100%"></iframe>
+			-->
+			<div class="content">
+				<div class="bar">
+					<img src="../images/viewimages/content_image/bar2.png" />
+				</div>
+				<div class="int">
+					<div class="demo">
+						<p style="height:40px;">
+							输入城市：<input id="txtCity" type="text" value="山西大学商务学院" />  
+							<button  onClick="getPoint()">获取坐标</button> 
+							<!-- 坐标：<input id="txtPoint" type="text"/> -->
+						</p>
+						<div id="l-map"></div>
+						<div id="r-result"></div>
+						<div style="clear: both"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+<!--about-->
+<div class="us">
+	<div class="usbox overflowH">
+		<div class="text">
+			<h1>联系我们</h1>
+			<p>武术一途，非同其他，真功夫凭苦练而得，真技击凭实战而得，诸君应不畏世俗之语，不畏一颜之得失，多与前辈、同侪请教、切磋，以印证一己之感悟。<br>"三人同行必有我师"，不卑不亢，谦恭有礼，学而不厌，方是正途。<br>纸上谈兵，终归在"纸上"，崇文尚武，苦练兴邦。</p>
+		</div>
+	<div class="connect">
+    		<div class="connect01">
+     			<div class="connectpic"><img src="../images/viewimages/common/us01.png"></div>
+     			<div class="connecttext">
+      				<h1>电话</h1>
+      				<a>18701658769</a>
+     			</div>
+   			</div>
+            <div class="connect01">
+                    <div class="connectpic"><img src="../images/viewimages/common/us02.png"></div>
+                    <div class="connecttext">
+                        <h1>邮箱</h1>
+                        <a>mons@mons.com.cn</a>
+                    </div>
+            </div>
+      	    <div class="connect01other">
+            	<div class="connectpic"><img src="../images/viewimages/common/us03.png"></div>
+            		<div class="connecttext">
+            			<h1>鼠标轻移扫一扫</h1>
+            			<a>18701658769</a>
+            		</div>
+        	</div>
+ 	 </div>
+ </div>
+</div>
+<!--footer-->
+<div class="footer">
+	<div class="footerbox overflowH">
+    	<div class="copyright"><h1>COPYRIGHT&nbsp;&copy;&nbsp;2008-2014&nbsp;尚兴国术馆(shangxing.com)&nbsp;ALL&nbsp;RIGHTS&nbsp;RESERVED</h1></div>
+    </div>
+</div>
+<!-- 百度地图api设置 -->
+<script type="text/javascript">
+			// 百度地图API功能	
+			var map = new BMap.Map("l-map");            // 创建Map实例
+			var point = new BMap.Point(107.13, 34.00);
+			map.centerAndZoom(point, 15);
+			var marker = new BMap.Marker(point);  // 创建标注
+			map.addOverlay(marker);               // 将标注添加到地图中
+			marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+			
+			map.enableScrollWheelZoom();
+			var local = new BMap.LocalSearch("全国", {
+				renderOptions: {
+					map: map,
+					panel : "r-result",
+					autoViewport: true,
+					selectFirstResult: false
+				}
+			});
+			
+			map.addEventListener("click",function(e){
+				document.getElementById("txtPoint").value=e.point.lng + "," + e.point.lat;
+			});
+			function getPoint(){
+				var city = document.getElementById("txtCity").value; // 初始化地图,设置城市和地图级别。
+				local.search(city);     //启用滚轮放大缩小                                     
+			}
+</script>		
+</body>
+</html>

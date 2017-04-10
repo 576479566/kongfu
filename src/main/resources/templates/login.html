@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>尚兴国术馆形意拳学习网-后台管理系统</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="_csrf" th:content="${_csrf.token}" />
+	<meta name="_csrf_header" th:content="${_csrf.headerName}" />
+	<link href="/css/login2.css" rel="stylesheet" type="text/css" />
+	<sec:csrfMetaTags />
+</head>
+<body>
+	<h1>
+		尚兴国术馆形意拳学习网站-后台管理系统<sup>2017</sup>
+	</h1>
+	<div class="login" style="margin-top: 50px;">
+
+		<div class="header">
+			<div class="switch" id="switch">
+				<a class="switch_btn_focus" id="switch_qlogin"
+					href="javascript:void(0);" tabindex="7">快速登录</a>
+				<!-- <a class="switch_btn" id="switch_login" href="javascript:void(0);" tabindex="8">申请注册</a> -->
+				<div class="switch_bottom" id="switch_bottom"
+					style="position: absolute; width: 64px; left: 0px;"></div>
+			</div>
+		</div>
+
+		<div class="web_qr_login" id="web_qr_login"
+			style="display: block; height: 235px;">
+
+			<!--登录-->
+			<div class="web_login" id="web_login">
+				<div class="login-box">
+					<div class="login_form">
+						<form action="" name="loginform" accept-charset="utf-8"
+							id="login_form" class="loginForm" method="post">
+							<input type="hidden" name="did" value="0" /> <input
+								type="hidden" name="to" value="log" />
+							<div class="uinArea" id="uinArea">
+								<label class="input-tips" for="u">帐号：</label>
+								<div class="inputOuter" id="uArea">
+									<input type="text" id="username" name="username"
+										class="inputstyle" />
+								</div>
+							</div>
+							<div class="pwdArea" id="pwdArea">
+								<label class="input-tips" for="p">密码：</label>
+								<div class="inputOuter" id="pArea">
+									<input type="password" id="password" name="p"
+										class="inputstyle" />
+								</div>
+							</div>
+							<div style="padding-right: 10px; margin-top: 20px;">
+								<span id="error_message"
+									style="text-align: center; font-size: 16px; color: red;"></span>
+								<input onclick="login();" type="button" value="登 录"
+									style="width: 50px;" class="button_blue" />
+							</div>
+						</form>
+					</div>
+
+				</div>
+
+			</div>
+			<!--登录end-->
+		</div>
+
+		<!--注册-->
+		<!-- <div class="qlogin" id="qlogin" style="display: none;">
+
+			<div class="web_login">
+					<input type="hidden" name="to" value="reg" /> <input type="hidden"
+						name="did" value="0" />
+					<ul class="reg_form" id="reg-ul">
+						<div id="userCue" class="cue">申请注册请注意格式</div>
+						<li><label for="user" class="input-tips2">用户名：</label>
+							<div class="inputOuter2">
+								<input type="text" id="user" name="user" maxlength="16"
+									class="inputstyle2" />
+							</div></li>
+
+						<li><label for="passwd" class="input-tips2">密码：</label>
+							<div class="inputOuter2">
+								<input type="password" id="pwd" name="passwd" maxlength="16"
+									class="inputstyle2" />
+							</div></li>
+						<li><label for="passwd2" class="input-tips2">确认密码：</label>
+							<div class="inputOuter2">
+								<input type="password" id="pwdr" name="" maxlength="16"
+									class="inputstyle2" />
+							</div></li>
+
+						<li><label for="qq" class="input-tips2">QQ：</label>
+							<div class="inputOuter2">
+
+								<input type="text" id="qq" name="qq" maxlength="10"
+									class="inputstyle2" />
+							</div></li>
+
+						<li>
+							<div class="inputArea">
+								<input type="button" id="regist"
+									style="margin-top: 20px; margin-left: 85px;"
+									class="button_blue" value="同意注册" />
+							</div>
+						</li>
+						<div class="cl" style="color: red; font-size: 14px;"
+							id="warning_message"></div>
+					</ul>
+			</div>
+		</div> -->
+		<!--注册end-->
+	</div>
+	<div class="jianyi">*推荐使用ie8或以上版本ie浏览器或Chrome内核浏览器访问本站</div>
+	<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
+	<script type="text/javascript" src="/js/common.js"></script>
+	<script type="text/javascript" src="/js/jquery.similar.msgbox.js"></script>
+	<script>
+		function login() {
+			var token = $("meta[name='_csrf']").attr("content");
+			var header = $("meta[name='_csrf_header']").attr("content");
+			$(document).ajaxSend(function(e,xhr,options){
+				xhr.setRequestHeader(header,token);
+			});
+			var username = $("#username").val();
+			var password = $("#password").val();
+			$.ajax({
+				type : "POST",
+				url : "../user/login",
+				data : {
+					username : username,
+					password : password
+				},
+				contentType : "application/json; charset=utf-8",
+				dataType : "json",
+				async : true,
+				success : function(data) {
+					alert(data);
+				}
+			});
+		}
+	</script>
+</body>
+</html>
