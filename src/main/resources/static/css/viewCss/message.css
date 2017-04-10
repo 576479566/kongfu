@@ -1,0 +1,12 @@
+/*-- 在线客服 --*/
+.box_os{ height:auto; overflow:hidden; width:106px;position:fixed;right:0;top:300px;_position:absolute; z-index:9999;}
+.box_os .os_x{ width:13px; height:17px; margin-right:1px; float:right; display:inline; background:url(http://i1.umivi.net/v/static/dianbo/images/os20120725.gif) no-repeat; cursor:pointer;}
+.box_os .osqq{ width:104px; border:1px solid #D1D1D1; background:#F0F0F0 url(http://i1.umivi.net/v/static/dianbo/images/os20120725.gif) no-repeat 0 -101px; clear:both; padding:35px 0 8px 0; text-align:center;}
+.box_os .osqq p{ height:auto; line-height:20px;width:104px; margin-top:8px;}
+.box_os .osqq p strong{ color:#666;}
+.box_os .osqq img{ padding:7px 0 3px 0;}
+.box_os .osqq p em{ color:#999; display:block;}
+.box_os .osqq p span{ color:#547816; display:block;}
+.onlineService{ display:none; width:25px; height:97px; background:url(http://i1.umivi.net/v/static/dianbo/images/os20120725.gif) no-repeat -80px 0; cursor:pointer;position:fixed;right:0;top:300px;_position:absolute;}
+.box_os .osqq p span a{color:#547816;}
+

@@ -1,0 +1,48 @@
+/* 精品页面css */
+.t_c img{ margin:0 auto;}
+.bar {
+	margin: 10px 0px;
+	border: 2px solid #e1e1e1;
+	height: 113px;
+	overflow: hidden;
+}
+.details {
+	margin-bottom: 10px;
+}
+.d_left {
+	float: left;
+	width: 313px;	
+}
+.d_left_top {
+	width: 313px;
+	border: 2px solid #e1e1e1;
+}
+.d_right {
+	float: right; 
+	width: 623px;
+}
+.d_right_top {
+	width: 623px;
+	border: 2px solid #e1e1e1;
+}
+
+/* 关于我们页面样式 */
+.int {
+	border: 2px solid #e1e1e1;
+	margin-bottom: 20px;
+}
+.int_title {
+	height: 30px;
+	line-height: 30px;
+	background: #0550a3;
+}
+.int_con p {
+	text-indent: 2em;
+	line-height: 30px;
+	font-size: 14px;
+	margin: 10px 20px;
+}
+.t_c {
+	text-align: center;
+	margin: 10px;
+}

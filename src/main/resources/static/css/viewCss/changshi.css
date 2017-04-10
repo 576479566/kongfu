@@ -1,0 +1,31 @@
+.content{margin:20px auto;}
+#c_left{width:730px; background:#fff;border-radius:1px;}
+#c_left .article_tuijian{width:710px;height:68px; background-image:url(images/r_line.jpg); background-repeat:repeat-x; background-position:bottom left;}
+.article_tuijian h2{width:650px;height:37px; background-image:url(images/tj.png); background-repeat:no-repeat;padding:20px 0px 5px 60px;
+color:#f26522;font-size:18px;margin-left:5px;}
+.article_tuijian h2 span{color:#1e7ab6;padding-left:3px;}
+/*文章*/
+#c_left .content_text{width:730px;margin-top:5px;}
+#c_left .content_text .wz{width:725px;margin:5px 0px 10px 0px;color:#1D1A1A;}
+.wz h3{width:300px;height:30px;overflow:hidden;line-height:30px;font-size:17px;font-weight:500;padding-left:5px;color:#325EBD;}
+.wz h3 a{color:#D3535D;}
+.wz h3:hover{padding-left:20px; transition: all 0.5s;-webkit-transition: all 0.5s; -moz-transition: all 0.5s; -o-transition: all 0.5s;}
+.wz dl{width:730px;margin-top:3px;}
+.wz dl dt{float:left;width:204px;height:127px;margin-left:5px;display:block;border:1px solid #ccc;}
+.wz dl dt img{padding:2px;}
+.wz dl dd{float:left;width:505px;overflow:hidden;margin-left:5px;}
+.wz dl dd .dd_text_1{height:80px;display:block;overflow:hidden;}
+.wz dl dd .dd_text_2{line-height:30px;margin-top:10px;}
+.wz dl dd .dd_text_2 span{padding-left:20px;}
+.wz dl dd .dd_text_2 .author{display:block;width:60px;height:30px; background-image:url(../../images/viewimages/changshi_image/tx.jpg); background-repeat:no-repeat; background-position:5px 7px;
+padding-left:25px;margin-left:20px;}
+.wz dl dd .dd_text_2 .sj{display:block;width:120px;height:30px;background-image:url(../../images/viewimages/changshi_image/sj.jpg); background-repeat:no-repeat; background-position:5px 7px;padding-left:25px;}
+.wz dl dd .dd_text_2 .yd{display:block;width:110px;height:30px;text-align:center;margin-top:3px;}
+.wz dl dd .dd_text_2 .yd a{color:#F55522;display:block;width:80px;height:22px;line-height:22px;
+text-align:center;padddding:2px 5px;border:1px solid #AC9696;border-radius:2px;}
+.wz dl dd .dd_text_2 .yd a:hover{color:#f36;}
+
+#c_right{ float:right; background-color:white;}
+#c_right ul{ margin-bottom:10px;}
+.footer{ clear:both}
+#c_right img{ border:solid 3px #e1e1e1;padding:5px;}
